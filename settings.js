@@ -38,19 +38,19 @@ global.libreria = 'Baileys'
 global.baileys = 'V 6.7.8'
 global.vs = '2.0.7'
 global.languaje = 'Español'
-global.nameqr = 'YotsubaBot-MD✿'
-global.namebot = 'YotsubaBot-MD✿ᩚ'
+global.nameqr = 'U.FicctBot🐧'
+global.namebot = 'U.FicctBot🐧'
 global.sessions = 'YotsubaSession'
 global.jadi = 'YotsubaJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = 'YotsubaBot-MD✿'
-global.botname = 'YotsubaBot-MD✻'
-global.wm = 'YotsubaBot-MD❋'
+global.packname = 'U.FicctBot🐧'
+global.botname = 'U.FicctBot🐧'
+global.wm = 'U.FicctBot🐧'
 global.author = '𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 @Alba070503'
-global.dev = '© 𝚙𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 *ੈ✩‧₊˚ 『𝚂𝚙𝚊𝚌𝚎𝙽𝚒𝚐𝚑𝚝 𝚃𝚎𝚊𝚖』 *ੈ✩‧₊˚'
-global.textbot = 'Yostuba Nakano : Powered By @Alba070503'
+global.dev = 'Bot Hecho Para La Falcutad de la Ficct'
+global.textbot = 'U.FicctBot🐧 Powered @Alba070503'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
@@ -80,10 +80,10 @@ global.correo = 'Alba070503@gmail.com'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.ch = {
-ch1: '120363198641161536@newsletter',
-ch2: '120363160031023229@newsletter',
-ch3: '120363263466636910@newsletter',
-ch4: '120363370415738881@newsletter',
+ch1: '120363314543492849@newsletter',
+ch2: '120363314543492849@newsletter',
+ch3: '120363314543492849@newsletter',
+ch4: '120363314543492849@newsletter',
 }
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
