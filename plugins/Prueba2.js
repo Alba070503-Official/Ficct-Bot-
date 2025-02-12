@@ -11,7 +11,7 @@ const sendPDF = async (conn, m, url, fileName) => {
 };
 let handler = async (m, { conn }) => {
   const pdfUrl = 'https://qu.ax/ewTsT.pdf';
-  const fileName = 'Recomendaciones de maestro By@Alba070503.pdf';
+  const fileName = 'Maestro En Oferta 1/2025.pdf';
   await sendPDF(conn, m, pdfUrl, fileName);
 };
 handler.help = ['sendpdf'];
