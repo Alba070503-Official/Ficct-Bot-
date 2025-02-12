@@ -13,8 +13,6 @@ const handler = async (m, { conn, usedPrefix, __dirname }) => {
 
     const { key } = await conn.sendMessage(m.chat, { text: `Cargando menú, espera un momento...` }, { quoted: m });
 
-    await conn.sendMessage(m.chat, { text: `📢 Únete a mi canal de WhatsApp: https://whatsapp.com/channel/0029VaAN15BJP21BYCJ3tH04` }, { edit: key });
-
     const menuText = `
 ╭━〔 *FicctBot - Menú* 〕━⬣
 ┃👤 *Usuario:* ${taguser}
