@@ -22,6 +22,47 @@ const handler = async (m, { conn, usedPrefix, __dirname }) => {
 ┃⏳ *Tiempo Activo:* ${uptime}
 ┃👑 *Owner:* Alba070503
 ╰━━━━━━━━━━━━⬣
+Bienvenido Al menu de Ficct-Bot
+> Mallas De las Carreras:
+#sistema
+#informatica
+#robotica
+#redes
+
+> PDF Recomendaciones Docentes & Maestro Oferta
+#recomendaciones
+#maestro
+
+> Numeros Oficiales De Administradores de Grupo de WhatsApp 
+#numsem1 (semestre 1)
+#numsem2 (semestre 2)
+#numsem3 (semestre 3)
+#numsem4 (semestre 4)
+#numsem5 (semestre 5)
+#numsem6 (semestre 6)
+#numsem7 (semestre 7)
+#numsem8 (semestre 8)
+#numsem9 (semestre 9)
+#numsem10 (semestre 10)
+#numelectiva (materia electiva)
+
+> información Jefes De Carrera
+#jefesistemas (Jefe de carrera sistema)
+#jefeinfo (Jefe de carrera informática)
+#jeferedes (Jefe de carrera redes)
+#jeferobotica (Jefe de carrera robótica)
+
+
+
+> Inteligencia Artificial 
+#ia (chatgpt)
+#gemini (Google Ai)
+#blackai (BlackboxAi)
+#deepseek (Deepseek Ai)
+#claude (Claude Ai)
+#iameta (Meta Ai)
+
+
     `.trim();
 
     const fkontak = {
@@ -36,7 +77,6 @@ const handler = async (m, { conn, usedPrefix, __dirname }) => {
 };
 
 handler.command = /^(menu|menú|help|info|comandos|allmenu|ayuda|commands)$/i;
-handler.exp = 50;
 handler.fail = null;
 export default handler;
 
