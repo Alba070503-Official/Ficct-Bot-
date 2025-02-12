@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 const handler = async (m, { conn, usedPrefix, __dirname }) => {
   if (usedPrefix === 'a' || usedPrefix === 'A') return;
   try {
-    const pp = 'https://files.catbox.moe/boxrbv.jpg'; 
+    const pp = 'https://qu.ax/kbRxS.png'; 
     const vn = './media/menu.mp3';
     const d = new Date(new Date() + 3600000);
     const locale = 'es';
