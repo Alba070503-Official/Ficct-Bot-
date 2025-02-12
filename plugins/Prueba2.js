@@ -10,7 +10,7 @@ const sendPDF = async (conn, m, url, fileName) => {
   fs.unlinkSync(tempFilePath);
 };
 let handler = async (m, { conn }) => {
-  const pdfUrl = 'https://qu.ax/lNsC.pdf';
+  const pdfUrl = 'https://qu.ax/ewTsT.pdf';
   const fileName = 'Recomendaciones de maestro By@Alba070503.pdf';
   await sendPDF(conn, m, pdfUrl, fileName);
 };
