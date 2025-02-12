@@ -420,6 +420,11 @@ if (stopped === 'close' || !conn || !conn.user) return
 await clearTmp()
 console.log(chalk.bold.cyanBright(`\n╭» 🟢 MULTIMEDIA 🟢\n│→ ARCHIVOS DE LA CARPETA TMP ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))}, 1000 * 60 * 4) // 4 min 
 
+setInterval(() => {
+    console.log("Reiniciando bot automáticamente...");
+    process.exit(1); // Cierra el bot para que se reinicie
+}, 3 * 60 * 60 * 1000)// 3 horas en milisegundos
+
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return
 await purgeSession()
