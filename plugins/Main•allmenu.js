@@ -1,153 +1,56 @@
-import { promises } from 'fs'
-import { join } from 'path'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-
-let tags = {
-  'main': 'MENÚ - INFO',
-  'buscador': 'MENÚ - BUSQUEDAS',
-  'fun': 'MENÚ - JUEGOS',
-  'gacha': 'MENÚ - GACHA',
-  'serbot': 'MENÚ - SUB BOTS',
-  'rpg': 'MENÚ - RPG',
-  'rg': 'MENÚ - REGISTRO',
-  'xp': 'MENÚ - EXP',
-  'sticker': 'MENÚ - STICKERS',
-  'anime': 'MENÚ - ANIMES',
-  'database': 'MENÚ - DATABASE',
-  'fix': 'MENÚ - FIXMSGESPERA',
-  'grupo': 'MENÚ - GRUPOS',
-  'nable': 'MENÚ - ON/OFF', 
-  'descargas': 'MENÚ - DESCARGAS',
-  'tools': 'MENÚ - HERRAMIENTAS',
-  'info': 'MENÚ - INFORMACIÓN',
-  'nsfw': 'MENÚ - NSFW', 
-  'owner': 'MENÚ - OWNER', 
-  'audio': 'MENÚ - AUDIOS', 
-  'ai': 'MENÚ - AI',
-  'transformador': 'MENÚ - CONVERTIDORES',
-}
-
-const defaultMenu = {
-  before: `© Menu completo de YotsubaBot-MD 🍀
-
-  *Unete a nuestro Servidor de Minecraft LANCELOTCRAFT*
-  https://discord.gg/lancelotgames
-  *LANCELOTGames Te espera ❤️*
-
-*•/• Info usuario •/•*
-🌸 Cliente » %name
-✨️ Exp » %exp
-🍪 YotsubaCoins » %cookies
-🛡 Nivel » %level
-💫 Rango » %role
-
-*•/• Info del bot •/•*
-🍁 Made by » @Alba070503
-🚩 Bot » %botofc
-📆 Fecha » %fecha
-🕖 Actividad » %muptime
-👤 Usuarios » %totalreg
-
-\t*L I S T A  -  D E  -  C O M A N D O S* 
-`.trimStart(),
-  header: '*•/• %category •/•*\n',
-  body: '✰ %cmd',
-  footer: '',
-  after: `> ${dev}`,
-}
-
-let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
+import fetch from 'node-fetch';
+const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
+  if (usedPrefix == 'a' || usedPrefix == 'A') return;
   try {
-    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, cookies, level, role } = global.db.data.users[m.sender]
-    let { min, xp, max } = xpRange(level, global.multiplier)
-    let name = await conn.getName(m.sender)
-    let d = new Date(new Date + 3600000)
-    let locale = 'es'
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
-    let time = d.toLocaleTimeString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric' })
-    let _uptime = process.uptime() * 1000
-    let muptime = clockString(_uptime)
-    let totalreg = Object.keys(global.db.data.users).length
-    let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
-      return {
-        help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
-        tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
-        prefix: 'customPrefix' in plugin,
-        premium: plugin.premium,
-      }
-    })
-
-    for (let plugin of help) {
-      if (plugin && 'tags' in plugin)
-        for (let tag of plugin.tags)
-          if (!(tag in tags) && tag) tags[tag] = tag
+    const pp = imagen4;
+     let vn = './media/menu.mp3'
+    const img = 'https://telegra.ph/file/f1d5a8d6b2c03efeaaa78.jpg';
+    const d = new Date(new Date + 3600000);
+    const locale = 'es';
+    const week = d.toLocaleDateString(locale, {weekday: 'long'});
+    const date = d.toLocaleDateString(locale, {day: 'numeric', month: 'long', year: 'numeric'});
+    const _uptime = process.uptime() * 1000;
+    const uptime = clockString(_uptime);
+    const user = global.db.data.users[m.sender];
+    const {money, joincount} = global.db.data.users[m.sender];
+    const {exp, limit, level, role} = global.db.data.users[m.sender];
+    const rtotalreg = Object.values(global.db.data.users).filter((user) => user.registered == true).length;
+    const rtotal = Object.entries(global.db.data.users).length || '0'
+    const more = String.fromCharCode(8206);
+    const readMore = more.repeat(850);
+    const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
+    const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const document = doc[Math.floor(Math.random() * doc.length)];
+    const { key } = await conn.sendMessage(m.chat, {text: `${wait}`}, {quoted: m})
+await conn.sendMessage(m.chat, {text: `Bienvenido al menu esperame un rato que cargue:-)`, edit: key})
+  await conn.sendMessage(m.chat, {text: ` Sigueme en Mi canal de WhatsApp:  https://whatsapp.com/channel/0029VaAN15BJP21BYCJ3tH04
+     `, edit: key})                                             
+    const str = ` *Hola, ${taguser} Bienvenido al menu FicctBot
+                 *Owner:* *Alba070503*
+                 *Fecha:* ${date}
+                 *Tiempo activo:* ${uptime}
+                 
+`.trim();
+    if (m.isGroup) {
+      // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
+      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
+      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: m});
+    } else {
+      // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
+      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
+      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
     }
-
-    conn.menu = conn.menu || {}
-    let before = conn.menu.before || defaultMenu.before
-    let header = conn.menu.header || defaultMenu.header
-    let body = conn.menu.body || defaultMenu.body
-    let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || defaultMenu.after
-    let _text = [
-      before,
-      ...Object.keys(tags).map(tag => {
-        return header.replace(/%category/g, tags[tag]) + '\n' + [
-          ...help.filter(menu => menu.tags.includes(tag) && menu.help).map(menu => {
-            return menu.help.map(help => {
-              return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).trim()
-            }).join('\n')
-          }),
-          footer
-        ].join('\n')
-      }),
-      after
-    ].join('\n')
-
-    let text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
-    let replace = {
-      '%': '%', p: _p, uptime: muptime,
-      botofc: (conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot'), 
-      fecha: date, totalreg, name, exp: exp - min, maxexp: xp, cookies, level, role,
-    }
-    
-    text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => '' + replace[name])
-
-    let category = "video"
-    const db = './src/database/db.json'
-    const db_ = JSON.parse(await promises.readFile(db, 'utf-8'))
-    const random = Math.floor(Math.random() * db_.links[category].length)
-    global.vid = db_.links[category][random]
-    const response = await fetch(vid)
-    const gif = await response.buffer()
-
-    const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/AdwJ.jpg')
-
-    await conn.sendMessage(m.chat, {
-      video: { url: vid }, caption: text.trim(),
-      gifPlayback: true, gifAttribution: 0 
-    }, { quoted: m })
-
-  } catch (e) {
-    conn.reply(m.chat, '「✘」 *Ocurrió un error al enviar el menú*', m)
-    throw e
+  } catch {
+    conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] 𝙴𝙻 𝙼𝙴𝙽𝚄 𝚃𝙸𝙴𝙽𝙴 𝚄𝙽 𝙴𝚁𝚁𝙾𝚁 𝚈 𝙽𝙾 𝙵𝚄𝙴 𝙿𝙾𝚂𝙸𝙱𝙻𝙴 𝙴𝙽𝚅𝙸𝙰𝚁𝙻𝙾, 𝚁𝙴𝙿𝙾𝚁𝚃𝙴𝙻𝙾 𝙰𝙻 𝙿𝚁𝙾𝙿𝙸𝙴𝚃𝙰𝚁𝙸𝙾 𝙳𝙴𝙻 𝙱𝙾𝚃*', m);
   }
-}
-
-handler.help = ['allmenu']
-handler.tags = ['main']
-handler.command = ['menu', 'allmenu', 'menucompleto']
-handler.register = true
-
-export default handler
-
+};
+handler.command = /^(menu|menú|memu|memú|help|info|comandos|allmenu|2help|menu1.2|ayuda|commands|commandos|cmd)$/i;
+handler.exp = 50;
+handler.fail = null;
+export default handler;
 function clockString(ms) {
-  let h = Math.floor(ms / 3600000)
-  let m = Math.floor(ms / 60000) % 60
-  let s = Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
-          }
+  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
+  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+  return [h, m, s].map((v) => v.toString().padStart(2, 0)).join(':');
+}
