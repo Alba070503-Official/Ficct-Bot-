@@ -1,17 +1,15 @@
-import fetch from 'node-fetch';
+import fs from 'fs';
 
-const handler = async (m, { conn, usedPrefix, __dirname }) => {
+const handler = async (m, { conn, usedPrefix }) => {
   if (usedPrefix === 'a' || usedPrefix === 'A') return;
+  
   try {
-    const pp = 'https://files.catbox.moe/boxrbv.jpg'; 
-    const vn = './media/menu.mp3';
-    const d = new Date(new Date() + 3600000);
+    const pp = fs.existsSync('./media/menu.jpg') ? './media/menu.jpg' : 'https://files.catbox.moe/boxrbv.jpg';
+    const d = new Date();
     const locale = 'es';
     const date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
     const uptime = clockString(process.uptime() * 1000);
     const taguser = '@' + m.sender.split('@')[0];
-
-    const { key } = await conn.sendMessage(m.chat, { text: `Cargando menú, espera un momento...` }, { quoted: m });
 
     const menuText = `
 ╭━〔 *FicctBot - Menú* 〕━⬣
@@ -20,7 +18,7 @@ const handler = async (m, { conn, usedPrefix, __dirname }) => {
 ┃⏳ *Tiempo Activo:* ${uptime}
 ┃👑 *Owner:* Alba070503
 ╰━━━━━━━━━━━━⬣
-Bienvenido Al menu de Ficct-Bot
+Bienvenido Al menú de Ficct-Bot
 > Mallas De las Carreras:
 #sistema
 #informatica
@@ -31,7 +29,7 @@ Bienvenido Al menu de Ficct-Bot
 #recomendaciones
 #maestro
 
-> Numeros Oficiales De Administradores de Grupo de WhatsApp 
+> Números Oficiales De Administradores de Grupo de WhatsApp 
 #numsem1 (semestre 1)
 #numsem2 (semestre 2)
 #numsem3 (semestre 3)
@@ -44,31 +42,27 @@ Bienvenido Al menu de Ficct-Bot
 #numsem10 (semestre 10)
 #numelectiva (materia electiva)
 
-> información Jefes De Carrera
+> Información Jefes De Carrera
 #jefesistemas (Jefe de carrera sistema)
 #jefeinfo (Jefe de carrera informática)
 #jeferedes (Jefe de carrera redes)
 #jeferobotica (Jefe de carrera robótica)
 
-
-
 > Inteligencia Artificial 
-#ia (chatgpt)
-#gemini (Google Ai)
-#blackai (BlackboxAi)
-#deepseek (Deepseek Ai)
-#claude (Claude Ai)
-#iameta (Meta Ai)
-
-
+#ia (ChatGPT)
+#gemini (Google AI)
+#blackai (Blackbox AI)
+#deepseek (Deepseek AI)
+#claude (Claude AI)
+#iameta (Meta AI)
     `.trim();
 
-    const fkontak = {
-      key: { remoteJid: 'status@broadcast', fromMe: false, id: 'Halo' },
-      message: { contactMessage: { vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Bot;;;\nFN:FicctBot\nTEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nEND:VCARD` } }
-    };
+    // Enviar primero el texto para mayor rapidez
+    await conn.sendMessage(m.chat, { text: menuText, mentions: [m.sender] });
 
-    conn.sendMessage(m.chat, { image: { url: pp }, caption: menuText, mentions: [m.sender] }, { quoted: fkontak });
+    // Enviar la imagen después
+    await conn.sendMessage(m.chat, { image: fs.existsSync(pp) ? { url: pp } : { url: 'https://files.catbox.moe/boxrbv.jpg' } });
+
   } catch (e) {
     conn.reply(m.chat, '❗ *Error:* No se pudo enviar el menú. Reporta esto al propietario del bot.', m);
   }
