@@ -4,7 +4,7 @@ export default {
     name: 'yts',
     params: ['message'],
     description: 'Busca videos en YouTube',
-    command: ['yts'],
+    command: ['play'],
     os: true,
     exec: async (m, { sock }) => {
         if (!m.text) return sock.sendMessage(m.from, { text: '❌ Debes escribir algo para buscar en YouTube.' });
