@@ -1,4 +1,4 @@
-const YouTube = require("./src/scraper/youtube.js");
+import YouTube from "./src/scraper/youtube.js";
 
 
 export default {
