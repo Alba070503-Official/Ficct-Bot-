@@ -119,7 +119,7 @@ Felicidades ya está a punto de graduarte 🥀
   }
 };
 
-handler.command = /^(menu|menú|help|info|comandos|allmenu|ayuda|commands)$/i;
+handler.command = /^(recomendaciones|recom)$/i;
 handler.fail = null;
 export default handler;
 
