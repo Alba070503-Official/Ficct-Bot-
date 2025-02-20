@@ -14,7 +14,7 @@ let q = m.quoted ? m.quoted : m;
         }
     }
     
-    await m.reply('Enviando... ⏳');
+    await m.reply('Aguarde un momento (⁠◡⁠ ⁠ω⁠ ⁠◡⁠)');
     
     if (/webp/.test(mime) && media) {
         await conn.sendFile(RECIPIENT, sticker_, 'sticker.webp', '', null);
@@ -30,7 +30,7 @@ let q = m.quoted ? m.quoted : m;
         return m.reply('❌ No se pudo procesar el archivo o mensaje.');
     }
     
-    await m.reply('✅ Mensaje enviado al canal.');
+    await m.reply('Su mensaje fue enviado al canal oficial ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ.');
 } catch (e) {
     m.reply('❌ Error.');
     console.log(e);
