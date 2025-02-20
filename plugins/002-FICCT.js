@@ -1,6 +1,6 @@
 import { sticker } from '../lib/sticker.js'
 
-const ADMIN_GROUP_ID = "120363317570465699@g.us"
+const ADMIN_GROUP_ID = "120363382897286189@g.us"
 let handler = async (m, { conn, text }) => {
 try {
 let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID)
@@ -22,8 +22,8 @@ console.log(media)
 sticker_ = await sticker(media, false, 'FicctBot', 'Powered by @Alba070503')
 }
 
-const recipient = "120363160031023229@newsletter"
-const groupChatId = "120363317570465699@g.us"
+const recipient = "120363360977692179@newsletter"
+const groupChatId = "120363382897286189@g.us"
 
 await m.reply('Enviando... ⏳ Si el contenido lleva multimedia tomará tiempo, sea paciente.')
     
@@ -59,5 +59,5 @@ m.reply('❌ Error.')
 console.log(e)        
 }}
 
-handler.command = /^(infinity)$/i
+handler.command = /^(ficct)$/i
 export default handler
