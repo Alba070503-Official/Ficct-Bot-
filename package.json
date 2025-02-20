@@ -1,5 +1,5 @@
 {
-  "name": "YotsubaBot-MD",
+  "name": "FicctBot",
   "version": "2.0.7",
   "description": "Simple WhatsApp Bot Multi Device",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/Alba070503/YotsubaBot-MD",
+  "homepage": "https://github.com/Alba070503-Official/Ficct-Bot-",
   "author": {
     "name": "Alba070503"
   },
@@ -28,10 +28,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alba070503/YotsubaBot-MD.git"
+    "url": "git+https://github.com/Alba070503-Official/Ficct-Bot-.git"
   },
   "bugs": {
-    "url": "https://github.com/Alba070503/YotsubaBot-MD/issues"
+    "url": "https://github.com/Alba070503-Official/Ficct-Bot-/issues"
   },
   "license": "GPL-3.0-or-later",
 "dependencies": {
