@@ -173,7 +173,7 @@ chat.antiver = false
 if (!('modoadmin' in chat))                     
 chat.modoadmin = false   
 if (!('antiLink' in chat))
-chat.antiLink = true
+chat.antiLink = false
 if (!('antiLink2' in chat))
 chat.antiLink2 = false
 if (!('reaction' in chat))
@@ -207,7 +207,7 @@ detect2: false,
 antiBot: false,
 antiBot2: false,
 modoadmin: false,
-antiLink: true,
+antiLink: false,
 antiLink2: false,
 simi: false,
 antiver: false,
